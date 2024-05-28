@@ -813,7 +813,7 @@ public class SmokeTest extends IntegrationTestSupport {
 
         EndpointPoolConfiguration newConfig = new EndpointPoolConfiguration();
         newConfig.setConnectMaxTries(5);
-        try (ModbusCommunicationInterface comms = modbusManager.newModbusCommunicationInterface(getEndpoint(),
+        try (ModbusCommunicationInterface ignored = modbusManager.newModbusCommunicationInterface(getEndpoint(),
                 newConfig)) {
             // Sets configuration for the endpoint implicitly
         }
@@ -822,7 +822,7 @@ public class SmokeTest extends IntegrationTestSupport {
         assertThat(modbusManager.getEndpointPoolConfiguration(getEndpoint()), is(not(equalTo(defaultConfig))));
 
         // Reset config
-        try (ModbusCommunicationInterface comms = modbusManager.newModbusCommunicationInterface(getEndpoint(), null)) {
+        try (ModbusCommunicationInterface ignored = modbusManager.newModbusCommunicationInterface(getEndpoint(), null)) {
             // Sets configuration for the endpoint implicitly
         }
         // Should match the default
