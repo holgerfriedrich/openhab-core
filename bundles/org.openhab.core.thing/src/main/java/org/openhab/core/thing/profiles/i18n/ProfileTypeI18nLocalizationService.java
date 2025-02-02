@@ -44,7 +44,8 @@ public class ProfileTypeI18nLocalizationService {
         this.profileI18nUtil = new ProfileI18nUtil(i18nProvider);
     }
 
-    public ProfileType createLocalizedProfileType(Bundle bundle, ProfileType profileType, @Nullable Locale locale) {
+    public ProfileType createLocalizedProfileType(@Nullable Bundle bundle, ProfileType profileType,
+            @Nullable Locale locale) {
         ProfileTypeUID profileTypeUID = profileType.getUID();
         String defaultLabel = profileType.getLabel();
         String label = profileI18nUtil.getProfileLabel(bundle, profileTypeUID, defaultLabel, locale);

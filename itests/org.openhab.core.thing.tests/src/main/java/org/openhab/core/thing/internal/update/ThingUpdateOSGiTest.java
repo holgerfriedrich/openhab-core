@@ -405,6 +405,7 @@ public class ThingUpdateOSGiTest extends JavaOSGiTest {
 
     private class BundleResolverImpl implements BundleResolver {
         @Override
+        @Nullable
         public Bundle resolveBundle(@NonNullByDefault({}) Class<?> clazz) {
             // return the test bundle if the class is TestThingHandlerFactory
             if (clazz != null && clazz.equals(TestThingHandlerFactory.class)) {

@@ -83,7 +83,7 @@ public class SystemProfileFactory implements ProfileFactory, ProfileAdvisor, Pro
     private final Map<LocalizedKey, ProfileType> localizedProfileTypeCache = new ConcurrentHashMap<>();
 
     private final ProfileTypeI18nLocalizationService profileTypeI18nLocalizationService;
-    private final Bundle bundle;
+    private final @Nullable Bundle bundle;
 
     @Activate
     public SystemProfileFactory(final @Reference ChannelTypeRegistry channelTypeRegistry,

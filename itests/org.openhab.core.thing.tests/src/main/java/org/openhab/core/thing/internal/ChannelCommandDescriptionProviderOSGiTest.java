@@ -387,6 +387,7 @@ public class ChannelCommandDescriptionProviderOSGiTest extends JavaOSGiTest {
      */
     private class BundleResolverImpl implements BundleResolver {
         @Override
+        @Nullable
         public Bundle resolveBundle(@NonNullByDefault({}) Class<?> clazz) {
             if (clazz != null && clazz.equals(AbstractThingHandler.class)) {
                 return testBundle;

@@ -328,6 +328,7 @@ public class ThingStatusInfoI18nLocalizationServiceOSGiTest extends JavaOSGiTest
      */
     private class BundleResolverImpl implements BundleResolver {
         @Override
+        @Nullable
         public Bundle resolveBundle(@Nullable Class<?> clazz) {
             if (clazz != null && clazz.equals(AbstractThingHandler.class)) {
                 return testBundle;

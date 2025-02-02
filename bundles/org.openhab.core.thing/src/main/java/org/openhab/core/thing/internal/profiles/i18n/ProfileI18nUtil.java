@@ -45,7 +45,7 @@ public class ProfileI18nUtil {
         this.i18nProvider = i18nProvider;
     }
 
-    public @Nullable String getProfileLabel(Bundle bundle, ProfileTypeUID profileTypeUID, String defaultLabel,
+    public @Nullable String getProfileLabel(@Nullable Bundle bundle, ProfileTypeUID profileTypeUID, String defaultLabel,
             @Nullable Locale locale) {
         String key = I18nUtil.stripConstantOr(defaultLabel, () -> inferProfileTypeKey(profileTypeUID, "label"));
         return i18nProvider.getText(bundle, key, defaultLabel, locale);
