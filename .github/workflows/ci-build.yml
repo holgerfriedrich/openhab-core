@@ -23,6 +23,8 @@ jobs:
         os: [ 'ubuntu-24.04' ]
     name: Build (Java ${{ matrix.java }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    # typical duration is ~20min, set twice the amount as limit (default is 6h)
+    timeout-minutes: 40
     steps:
       - name: Checkout
         if: github.head_ref == ''
@@ -51,7 +53,7 @@ jobs:
           java-version: ${{ matrix.java }}
 
       - name: Set up Maven ${{ matrix.maven }}
-        uses: stCarolas/setup-maven@v5
+        uses: stCarolas/setup-maven@d6af6abeda15e98926a57b5aa970a96bb37f97d1 # v5
         with:
           maven-version: ${{ matrix.maven }}
 
@@ -93,6 +95,8 @@ jobs:
           path: '**/checkstyle-result.xml'
           mode: inline
 
+      # this will identify modifications to files under source control during the workflow run;
+      # untracked files will be ignored!
       - name: Verify Changed Files
         uses: tj-actions/verify-changed-files@v20
         id: verify-changed-files
