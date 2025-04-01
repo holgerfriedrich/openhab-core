@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'pr-j25-new'
     paths-ignore:
       - '.github/**/*.md'
   pull_request:
