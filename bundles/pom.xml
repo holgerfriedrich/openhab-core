@@ -277,6 +277,10 @@
           <exists>model.profile-marker</exists>
         </file>
       </activation>
+      <properties>
+        <!-- workaround for Java 25 build, necessary until xtend supports Java 25 -->
+        <maven.compiler.release>21</maven.compiler.release>
+      </properties>
       <dependencies>
         <dependency>
           <groupId>org.openhab.core.bom</groupId>
