@@ -7,6 +7,6 @@ on:
 jobs:
   trigger-build:
     if: ${{ github.event.label.name == 'rebuild' }}
-    uses: ./.github/workflows/build.yml
+    uses: build.yml
     with:
       job: ci_build
