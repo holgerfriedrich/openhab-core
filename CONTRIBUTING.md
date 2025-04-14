@@ -1,3 +1,5 @@
+test 
+
 # Contributing to openHAB Core components
 
 Warning: Note that this is most likely not the project you are looking for.
