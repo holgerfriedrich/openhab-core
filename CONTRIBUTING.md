@@ -1,4 +1,4 @@
-test 
+T
 
 # Contributing to openHAB Core components
 
