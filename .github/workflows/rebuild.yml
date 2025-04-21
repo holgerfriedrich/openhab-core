@@ -8,6 +8,12 @@ jobs:
   trigger-build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            .github
       - name: Trigger CI Build
         if: ${{ github.event.label.name == 'rebuild' }}
         uses: ./.github/workflows/ci_build.yml
