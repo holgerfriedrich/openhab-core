@@ -10,14 +10,6 @@ jobs:
     steps:
       - name: Trigger CI Build
         if: ${{ github.event.label.name == 'rebuild' }}
-        uses: actions/github-script@v7
+        uses: .github/workflows/ci_build.yml
         with:
-          script: |
-            const response = await github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: "ci-build.yml", // Name of the workflow file
-              ref: context.payload.pull_request.head.ref, // Branch to run the workflow on
-              inputs: {}
-            });
-            console.log(response);
+          job: build
