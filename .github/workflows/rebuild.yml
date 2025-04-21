@@ -14,6 +14,9 @@ jobs:
           fetch-depth: 0
           sparse-checkout: |
             .github
+      - name: List files
+        run: |
+          find .
       - name: Trigger CI Build
         if: ${{ github.event.label.name == 'rebuild' }}
         uses: ./.github/workflows/ci_build.yml
