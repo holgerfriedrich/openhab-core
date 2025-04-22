@@ -16,7 +16,10 @@ jobs:
         #    .github
       - name: List files
         run: |
+          pwd
           find .
+          echo "---------------"
+          find .|grep ci-build.yml
       - name: Trigger CI Build
         if: ${{ github.event.label.name == 'rebuild' }}
         uses: ./.github/workflows/ci-build.yml
