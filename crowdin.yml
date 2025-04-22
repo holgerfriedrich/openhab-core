@@ -1,4 +1,4 @@
-files:
+files: 
   - source: /bundles/**/i18n/**/*.properties
     ignore:
       - /bundles/**/i18n/**/*_*.properties
