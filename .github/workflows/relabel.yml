@@ -1,0 +1,60 @@
+name: Rebuild PR
+
+on:
+  pull_request:
+    types: [labeled]
+
+# grant permission
+# - actions:write to allow rerun
+# - PR:write to allow removing the label
+# - checks:write to allow setting build status
+permissions:
+  actions: write
+  checks: write
+  pull-requests: write
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      if: github.head_ref == ''
+      uses: actions/checkout@v4
+
+    - name: Checkout merge
+      if: github.head_ref != ''
+      uses: actions/checkout@v4
+      with:
+        ref: refs/pull/${{github.event.pull_request.number}}/merge
+
+    - name: List Jobs
+      run: |
+        echo "Label: ${{ github.event.label.name }}"
+        echo "PR: ${{ github.event.number }}"
+        NUMBER=$(gh pr checks ${{ github.event.number }} | sed -E 's#.*/([0-9]+)/job/([0-9]+)#\1#'|grep -ve '[[:alpha:]]'|sort -nu|head -n1)
+        echo Number of last check job: $NUMBER
+        echo NUMBER=$NUMBER>>$GITHUB_ENV
+
+    - name: Trigger Rebuild
+      if: ${{ github.event.label.name == 'rebuild' }}
+      env:
+        PR: ${{ github.event.number }}
+        NUMBER: ${{ env.NUMBER }}
+      run: |
+        if [ -z "$NUMBER" ]; then
+          echo "Error: Previous check run not found, cannot rebuild"
+          exit 1
+        fi
+        echo "Rebuilding PR #${{ github.event.number }}"
+        gh run rerun $NUMBER
+
+    - name: Remove Label
+      if: ${{ always() && github.event.label.name == 'rebuild' }}
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR: ${{ github.event.number }}
+      run: |
+        gh pr edit $PR --remove-label rebuild
