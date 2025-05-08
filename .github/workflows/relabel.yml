@@ -1,0 +1,49 @@
+name: Rebuild PR
+
+on:
+  pull_request:
+    types: [labeled]
+
+# grant permission 
+# - PR:write to allow removing the label
+# - checks:write to allow setting build status
+permissions:
+  checks: write
+  pull-requests: write
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List Jobs
+      run: |
+        echo "Event: ${{ toJson(github.event) }}"
+        echo "Label: ${{ github.event.label.name }}"
+        echo "PR: ${{ github.event.number }}"
+        NUMBER=$(gh pr checks ${{ github.event.number }} |sed -E 's#.*/([0-9]+)/job/([0-9]+)#\1#'|grep -ve '[[:alpha:]]'|sort -nu|head -n1)
+        echo Number of last check job: $NUMBER
+        if [ -z "$NUMBER" ]; then
+          echo "Error: Prevous check run not found, cannot rebuild"
+          exit 1
+        fi
+        echo NUMBER=$NUMBER>>$GITHUB_ENV
+
+    - name: Trigger Rebuild
+      if: ${{ github.event.label.name == 'rebuild' }}
+      env:
+        PR: ${{ github.event.number }}
+        NUMBER: ${{ env.NUMBER }}
+      run: |
+        echo "Rebuilding PR #${{ github.event.number }}"
+        gh pr checks $PR --restart $NUMBER
+
+    - name: Remove Label
+      if: ${{ always() && github.event.label.name == 'rebuild' }}
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR: ${{ github.event.number }}
+      run: |
+        gh pr edit $PR --remove-label rebuild
