@@ -4,10 +4,12 @@ on:
   pull_request:
     types: [labeled]
 
-# grant permission 
+# grant permission
+# - actions:write to allow rerun
 # - PR:write to allow removing the label
 # - checks:write to allow setting build status
 permissions:
+  actions: write
   checks: write
   pull-requests: write
 env:
