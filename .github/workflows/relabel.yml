@@ -27,11 +27,16 @@ env:
   PR_NUMBER: ${{ github.event.number || inputs.pr }}
   LABEL: ${{ github.event.label.name || inputs.label }}
 
-
 jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
+    - name: Info
+      env:
+        GITHUB_EVENT: ${{ toJson(github.event) }}
+      run: |
+        echo "$GITHUB_EVENT"
+        
     - name: Checkout
       if: github.head_ref == ''
       uses: actions/checkout@v4
@@ -46,7 +51,7 @@ jobs:
       run: |
         echo "Label: ${{ env.LABEL }}"
         echo "PR: ${{ env.PR_NUMBER }}"
-        NUMBER=$(gh pr checks ${{ env.PR_NUMBER }} -R holgerfriedrich/openhab-core| sed -E 's#.*/([0-9]+)/job/([0-9]+)#\1#'|grep -ve '[[:alpha:]]'|sort -nu|head -n3|xargs|tr '\n' ' ')
+        NUMBER=$(gh pr checks ${{ env.PR_NUMBER }} -R holgerfriedrich/openhab-core|grep -v "^rebuild"| sed -E 's#.*/([0-9]+)/job/([0-9]+)#\1#'|grep -ve '[[:alpha:]]'|sort -nu|head -n3|xargs|tr '\n' ' ')
         echo "Number of last 3 check jobs: $NUMBER"
         echo "NUMBER=$NUMBER">>$GITHUB_ENV
 
