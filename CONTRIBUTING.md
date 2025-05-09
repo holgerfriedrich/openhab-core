@@ -2,6 +2,7 @@
 
 Warning: Note that this is most likely not the project you are looking for.
 
+
 openHAB mainly consist out of the core components and extensions that are from
 https://github.com/openhab/openhab-addons. All is then packaged into a distribution in
 https://github.com/openhab/openhab-distro.
