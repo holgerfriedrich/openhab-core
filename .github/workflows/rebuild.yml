@@ -30,7 +30,7 @@ on:
 # - PR:write to allow removing the label
 # - checks:write to allow setting build status
 permissions:
-  actions: write
+  actions: none
   checks: write
   pull-requests: write
 env:
