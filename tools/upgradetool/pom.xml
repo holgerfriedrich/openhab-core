@@ -43,34 +43,14 @@
       <version>1.9.0</version>
     </dependency>
     <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.service.component.annotations</artifactId>
-      <version>1.5.1</version>
-    </dependency>
-    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>${slf4j.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.11.0</version>
-    </dependency>
-    <dependency>
       <groupId>javax.measure</groupId>
       <artifactId>unit-api</artifactId>
       <version>2.2</version>
-    </dependency>
-    <dependency>
-      <groupId>si.uom</groupId>
-      <artifactId>si-units</artifactId>
-      <version>2.2</version>
-    </dependency>
-    <dependency>
-      <groupId>tech.units</groupId>
-      <artifactId>indriya</artifactId>
-      <version>2.2.2</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jdt</groupId>

@@ -646,6 +646,17 @@ Import-Package: \\
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <ignoredUnusedDeclaredDependencies>
+            <ignoredDependency>org.openhab.core.bom:org.openhab.core.bom.*</ignoredDependency>
+            <ignoredDependency>org.openhab.core.bom:org.openhab.core.bom.test</ignoredDependency>
+          </ignoredUnusedDeclaredDependencies>
+        </configuration>
+      </plugin>
     </plugins>
     <extensions>
       <extension>
