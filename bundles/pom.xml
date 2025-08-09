@@ -278,6 +278,10 @@
           <exists>model.profile-marker</exists>
         </file>
       </activation>
+      <!-- TODO J25 remove this once xtext/xtend supports J25 -->
+      <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+      </properties>
       <dependencies>
         <dependency>
           <groupId>org.openhab.core.bom</groupId>

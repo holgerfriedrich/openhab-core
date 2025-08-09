@@ -13,6 +13,11 @@
 
   <name>openHAB Core :: Bundles :: SSL Certificate Generator</name>
 
+  <!-- TODO J25 remove this once maven-shade-plugin supports J25 -->
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.bouncycastle</groupId>
