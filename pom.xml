@@ -67,7 +67,7 @@
     <oh.java.version>25</oh.java.version>
     <maven.compiler.release>${oh.java.version}</maven.compiler.release>
 
-    <bnd.version>7.1.0</bnd.version>
+    <bnd.version>7.2.0-SNAPSHOT</bnd.version>
     <commons.net.version>3.11.1</commons.net.version>
     <eea.version>2.4.0</eea.version>
     <karaf.compile.version>4.4.8</karaf.compile.version>
@@ -121,6 +121,20 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>sonatype.snapshots</id>
+      <name>https://bndtools.jfrog.io/bndtools/update-snapshot</name>
+      <url>https://bndtools.jfrog.io/bndtools/update-snapshot/</url>
+    </repository>
+  </repositories>
 
   <build>
     <pluginManagement>
