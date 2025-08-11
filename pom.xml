@@ -122,20 +122,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>sonatype.snapshots</id>
-      <name>https://bndtools.jfrog.io/bndtools/update-snapshot</name>
-      <url>https://bndtools.jfrog.io/bndtools/update-snapshot/</url>
-    </repository>
-  </repositories>
-
   <build>
     <pluginManagement>
       <plugins>
