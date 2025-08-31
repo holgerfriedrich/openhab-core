@@ -16,6 +16,8 @@ import java.util.concurrent.ExecutorService;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.lsp4j.services.LanguageServer;
+import org.eclipse.xtext.ide.server.concurrent.IRequestManager;
+import org.eclipse.xtext.ide.server.concurrent.RequestManager;
 import org.eclipse.xtext.ide.ExecutorServiceProvider;
 import org.eclipse.xtext.ide.server.DefaultProjectDescriptionFactory;
 import org.eclipse.xtext.ide.server.ILanguageServerShutdownAndExitHandler;
@@ -54,6 +56,7 @@ public class RuntimeServerModule extends AbstractModule {
         binder().bind(ExecutorService.class).toProvider(ExecutorServiceProvider.class);
 
         bind(UriExtensions.class).toInstance(new MappingUriExtensions(OpenHAB.getConfigFolder()));
+        bind(IRequestManager.class).to(RequestManager.class);
         bind(LanguageServer.class).to(LanguageServerImpl.class);
         bind(IResourceServiceProvider.Registry.class).toProvider(new RegistryProvider(scriptServiceUtil, scriptEngine));
         bind(IMultiRootWorkspaceConfigFactory.class).to(MultiRootWorkspaceConfigFactory.class);
