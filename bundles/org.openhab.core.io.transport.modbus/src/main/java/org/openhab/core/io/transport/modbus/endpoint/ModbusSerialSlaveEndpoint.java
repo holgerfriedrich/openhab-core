@@ -17,7 +17,7 @@ import java.util.Objects;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 
-import net.wimpi.modbus.util.SerialParameters;
+import com.ghgande.j2mod.modbus.util.SerialParameters;
 
 /**
  * Serial endpoint. Endpoint differentiates different modbus slaves only by the serial port.

@@ -19,7 +19,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.openhab.core.io.transport.modbus.exception.ModbusSlaveErrorResponseException;
 
-import net.wimpi.modbus.ModbusSlaveException;
+import com.ghgande.j2mod.modbus.ModbusSlaveException;
 
 /**
  * Exception for explicit exception responses from Modbus slave

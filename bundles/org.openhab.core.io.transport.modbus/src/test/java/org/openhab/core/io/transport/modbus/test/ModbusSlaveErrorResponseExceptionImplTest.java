@@ -18,7 +18,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.junit.jupiter.api.Test;
 import org.openhab.core.io.transport.modbus.internal.ModbusSlaveErrorResponseExceptionImpl;
 
-import net.wimpi.modbus.ModbusSlaveException;
+import com.ghgande.j2mod.modbus.ModbusSlaveException;
 
 /**
  * @author Sami Salonen - Initial contribution

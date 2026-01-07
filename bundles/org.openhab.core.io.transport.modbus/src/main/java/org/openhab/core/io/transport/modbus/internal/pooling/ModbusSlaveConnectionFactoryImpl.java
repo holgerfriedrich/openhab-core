@@ -34,10 +34,10 @@ import org.openhab.core.io.transport.modbus.endpoint.ModbusUDPSlaveEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import net.wimpi.modbus.net.ModbusSlaveConnection;
-import net.wimpi.modbus.net.SerialConnection;
-import net.wimpi.modbus.net.TCPMasterConnection;
-import net.wimpi.modbus.net.UDPMasterConnection;
+import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
+import com.ghgande.j2mod.modbus.net.SerialConnection;
+import com.ghgande.j2mod.modbus.net.TCPMasterConnection;
+import com.ghgande.j2mod.modbus.net.UDPMasterConnection;
 
 /**
  * ModbusSlaveConnectionFactoryImpl responsible of the lifecycle of modbus slave connections

@@ -56,13 +56,13 @@ import org.openhab.core.io.transport.modbus.exception.ModbusSlaveErrorResponseEx
 import org.openhab.core.io.transport.modbus.exception.ModbusSlaveIOException;
 import org.slf4j.LoggerFactory;
 
-import net.wimpi.modbus.msg.ModbusRequest;
-import net.wimpi.modbus.msg.WriteCoilRequest;
-import net.wimpi.modbus.msg.WriteMultipleCoilsRequest;
-import net.wimpi.modbus.procimg.SimpleDigitalIn;
-import net.wimpi.modbus.procimg.SimpleDigitalOut;
-import net.wimpi.modbus.procimg.SimpleRegister;
-import net.wimpi.modbus.util.BitVector;
+import com.ghgande.j2mod.modbus.msg.ModbusRequest;
+import com.ghgande.j2mod.modbus.msg.WriteCoilRequest;
+import com.ghgande.j2mod.modbus.msg.WriteMultipleCoilsRequest;
+import com.ghgande.j2mod.modbus.procimg.SimpleDigitalIn;
+import com.ghgande.j2mod.modbus.procimg.SimpleDigitalOut;
+import com.ghgande.j2mod.modbus.procimg.SimpleRegister;
+import com.ghgande.j2mod.modbus.util.BitVector;
 
 /**
  * @author Sami Salonen - Initial contribution
@@ -212,7 +212,7 @@ public class SmokeTest extends IntegrationTestSupport {
 
     /**
      * Have super slow connection response, eventually resulting as timeout (due to default timeout of 3 s in
-     * net.wimpi.modbus.Modbus.DEFAULT_TIMEOUT)
+     * com.ghgande.j2mod.modbus.Modbus.DEFAULT_TIMEOUT)
      *
      * @throws Exception
      */

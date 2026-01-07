@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.openhab.core.io.transport.modbus.internal.ModbusManagerImpl.PollTaskUnregistered;
 
-import net.wimpi.modbus.ModbusException;
+import com.ghgande.j2mod.modbus.ModbusException;
 
 /**
  * Implementation of simple stop watch.

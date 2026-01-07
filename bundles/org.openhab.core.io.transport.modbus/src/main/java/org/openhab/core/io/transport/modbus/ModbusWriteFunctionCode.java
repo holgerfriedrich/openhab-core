@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
 
-import net.wimpi.modbus.Modbus;
+import com.ghgande.j2mod.modbus.Modbus;
 
 /**
  * Modbus write function codes supported by this transport

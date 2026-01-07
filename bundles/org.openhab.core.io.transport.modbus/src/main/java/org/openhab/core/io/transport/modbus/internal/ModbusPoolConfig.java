@@ -21,7 +21,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnectionEvictionPolicy;
 
-import net.wimpi.modbus.net.ModbusSlaveConnection;
+import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
 
 /**
  * Configuration for Modbus connection pool

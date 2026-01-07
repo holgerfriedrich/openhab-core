@@ -20,8 +20,9 @@ import org.openhab.core.io.transport.modbus.endpoint.ModbusSerialSlaveEndpoint;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusTCPSlaveEndpoint;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusUDPSlaveEndpoint;
 
+import com.ghgande.j2mod.modbus.Modbus;
+
 import gnu.io.SerialPort;
-import net.wimpi.modbus.Modbus;
 
 /**
  * @author Sami Salonen - Initial contribution
