@@ -17,7 +17,7 @@ import java.util.Objects;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 
-import net.wimpi.modbus.Modbus;
+import com.ghgande.j2mod.modbus.Modbus;
 
 /**
  * Implementation of immutable representation of modbus read request

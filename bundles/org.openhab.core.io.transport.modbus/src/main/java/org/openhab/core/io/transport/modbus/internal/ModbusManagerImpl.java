@@ -66,14 +66,14 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import net.wimpi.modbus.Modbus;
-import net.wimpi.modbus.ModbusException;
-import net.wimpi.modbus.ModbusIOException;
-import net.wimpi.modbus.ModbusSlaveException;
-import net.wimpi.modbus.io.ModbusTransaction;
-import net.wimpi.modbus.msg.ModbusRequest;
-import net.wimpi.modbus.msg.ModbusResponse;
-import net.wimpi.modbus.net.ModbusSlaveConnection;
+import com.ghgande.j2mod.modbus.Modbus;
+import com.ghgande.j2mod.modbus.ModbusException;
+import com.ghgande.j2mod.modbus.ModbusIOException;
+import com.ghgande.j2mod.modbus.ModbusSlaveException;
+import com.ghgande.j2mod.modbus.io.ModbusTransaction;
+import com.ghgande.j2mod.modbus.msg.ModbusRequest;
+import com.ghgande.j2mod.modbus.msg.ModbusResponse;
+import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
 
 /**
  * Main implementation of ModbusManager

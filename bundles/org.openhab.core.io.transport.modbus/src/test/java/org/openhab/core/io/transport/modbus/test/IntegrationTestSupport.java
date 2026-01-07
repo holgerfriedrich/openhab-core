@@ -43,26 +43,27 @@ import org.openhab.core.test.java.JavaTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ghgande.j2mod.modbus.Modbus;
+import com.ghgande.j2mod.modbus.ModbusCoupler;
+import com.ghgande.j2mod.modbus.io.ModbusTransport;
+import com.ghgande.j2mod.modbus.msg.ModbusRequest;
+import com.ghgande.j2mod.modbus.net.ModbusSerialListener;
+import com.ghgande.j2mod.modbus.net.ModbusTCPListener;
+import com.ghgande.j2mod.modbus.net.ModbusUDPListener;
+import com.ghgande.j2mod.modbus.net.SerialConnection;
+import com.ghgande.j2mod.modbus.net.SerialConnectionFactory;
+import com.ghgande.j2mod.modbus.net.TCPSlaveConnection;
+import com.ghgande.j2mod.modbus.net.TCPSlaveConnection.ModbusTCPTransportFactory;
+import com.ghgande.j2mod.modbus.net.TCPSlaveConnectionFactory;
+import com.ghgande.j2mod.modbus.net.UDPSlaveTerminal;
+import com.ghgande.j2mod.modbus.net.UDPSlaveTerminal.ModbusUDPTransportFactoryImpl;
+import com.ghgande.j2mod.modbus.net.UDPSlaveTerminalFactory;
+import com.ghgande.j2mod.modbus.net.UDPTerminal;
+import com.ghgande.j2mod.modbus.procimg.SimpleProcessImage;
+import com.ghgande.j2mod.modbus.util.AtomicCounter;
+import com.ghgande.j2mod.modbus.util.SerialParameters;
+
 import gnu.io.SerialPort;
-import net.wimpi.modbus.Modbus;
-import net.wimpi.modbus.ModbusCoupler;
-import net.wimpi.modbus.io.ModbusTransport;
-import net.wimpi.modbus.msg.ModbusRequest;
-import net.wimpi.modbus.net.ModbusSerialListener;
-import net.wimpi.modbus.net.ModbusTCPListener;
-import net.wimpi.modbus.net.ModbusUDPListener;
-import net.wimpi.modbus.net.SerialConnection;
-import net.wimpi.modbus.net.SerialConnectionFactory;
-import net.wimpi.modbus.net.TCPSlaveConnection;
-import net.wimpi.modbus.net.TCPSlaveConnection.ModbusTCPTransportFactory;
-import net.wimpi.modbus.net.TCPSlaveConnectionFactory;
-import net.wimpi.modbus.net.UDPSlaveTerminal;
-import net.wimpi.modbus.net.UDPSlaveTerminal.ModbusUDPTransportFactoryImpl;
-import net.wimpi.modbus.net.UDPSlaveTerminalFactory;
-import net.wimpi.modbus.net.UDPTerminal;
-import net.wimpi.modbus.procimg.SimpleProcessImage;
-import net.wimpi.modbus.util.AtomicCounter;
-import net.wimpi.modbus.util.SerialParameters;
 
 /**
  * @author Sami Salonen - Initial contribution

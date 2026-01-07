@@ -14,7 +14,7 @@ package org.openhab.core.io.transport.modbus;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
 
-import net.wimpi.modbus.Modbus;
+import com.ghgande.j2mod.modbus.Modbus;
 
 /**
  * Base interface for Modbus write requests
@@ -66,12 +66,12 @@ public abstract class ModbusWriteRequestBlueprint {
      * integer value valid in the range of 0-127.<br>
      * Function codes are ordered in conformance
      * classes their values are specified in
-     * <tt>net.wimpi.modbus.Modbus</tt>.
+     * <tt>com.ghgande.j2mod.modbus.Modbus</tt>.
      * <p>
      *
      * @return the function code as <tt>int</tt>.
      *
-     * @see net.wimpi.modbus.Modbus
+     * @see com.ghgande.j2mod.modbus.Modbus
      */
     public abstract ModbusWriteFunctionCode getFunctionCode();
 

@@ -15,7 +15,7 @@ package org.openhab.core.io.transport.modbus.internal;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.openhab.core.io.transport.modbus.ModbusResponse;
 
-import net.wimpi.modbus.msg.ModbusMessage;
+import com.ghgande.j2mod.modbus.msg.ModbusMessage;
 
 /**
  * Basic implementation of {@link ModbusResponse}

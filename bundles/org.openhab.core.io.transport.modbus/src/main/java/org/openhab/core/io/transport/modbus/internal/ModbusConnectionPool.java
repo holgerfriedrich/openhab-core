@@ -19,7 +19,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusSlaveEndpoint;
 
-import net.wimpi.modbus.net.ModbusSlaveConnection;
+import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
 
 /**
  * Pool for modbus connections.

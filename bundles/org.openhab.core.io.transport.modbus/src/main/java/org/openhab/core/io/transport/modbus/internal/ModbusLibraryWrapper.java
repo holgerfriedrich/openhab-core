@@ -36,35 +36,35 @@ import org.openhab.core.io.transport.modbus.endpoint.ModbusUDPSlaveEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import net.wimpi.modbus.io.ModbusSerialTransaction;
-import net.wimpi.modbus.io.ModbusTCPTransaction;
-import net.wimpi.modbus.io.ModbusTransaction;
-import net.wimpi.modbus.io.ModbusUDPTransaction;
-import net.wimpi.modbus.msg.ModbusRequest;
-import net.wimpi.modbus.msg.ModbusResponse;
-import net.wimpi.modbus.msg.ReadCoilsRequest;
-import net.wimpi.modbus.msg.ReadCoilsResponse;
-import net.wimpi.modbus.msg.ReadInputDiscretesRequest;
-import net.wimpi.modbus.msg.ReadInputDiscretesResponse;
-import net.wimpi.modbus.msg.ReadInputRegistersRequest;
-import net.wimpi.modbus.msg.ReadInputRegistersResponse;
-import net.wimpi.modbus.msg.ReadMultipleRegistersRequest;
-import net.wimpi.modbus.msg.ReadMultipleRegistersResponse;
-import net.wimpi.modbus.msg.WriteCoilRequest;
-import net.wimpi.modbus.msg.WriteMultipleCoilsRequest;
-import net.wimpi.modbus.msg.WriteMultipleRegistersRequest;
-import net.wimpi.modbus.msg.WriteSingleRegisterRequest;
-import net.wimpi.modbus.net.ModbusSlaveConnection;
-import net.wimpi.modbus.net.SerialConnection;
-import net.wimpi.modbus.net.TCPMasterConnection;
-import net.wimpi.modbus.net.UDPMasterConnection;
-import net.wimpi.modbus.procimg.InputRegister;
-import net.wimpi.modbus.procimg.Register;
-import net.wimpi.modbus.procimg.SimpleInputRegister;
-import net.wimpi.modbus.util.BitVector;
+import com.ghgande.j2mod.modbus.io.ModbusSerialTransaction;
+import com.ghgande.j2mod.modbus.io.ModbusTCPTransaction;
+import com.ghgande.j2mod.modbus.io.ModbusTransaction;
+import com.ghgande.j2mod.modbus.io.ModbusUDPTransaction;
+import com.ghgande.j2mod.modbus.msg.ModbusRequest;
+import com.ghgande.j2mod.modbus.msg.ModbusResponse;
+import com.ghgande.j2mod.modbus.msg.ReadCoilsRequest;
+import com.ghgande.j2mod.modbus.msg.ReadCoilsResponse;
+import com.ghgande.j2mod.modbus.msg.ReadInputDiscretesRequest;
+import com.ghgande.j2mod.modbus.msg.ReadInputDiscretesResponse;
+import com.ghgande.j2mod.modbus.msg.ReadInputRegistersRequest;
+import com.ghgande.j2mod.modbus.msg.ReadInputRegistersResponse;
+import com.ghgande.j2mod.modbus.msg.ReadMultipleRegistersRequest;
+import com.ghgande.j2mod.modbus.msg.ReadMultipleRegistersResponse;
+import com.ghgande.j2mod.modbus.msg.WriteCoilRequest;
+import com.ghgande.j2mod.modbus.msg.WriteMultipleCoilsRequest;
+import com.ghgande.j2mod.modbus.msg.WriteMultipleRegistersRequest;
+import com.ghgande.j2mod.modbus.msg.WriteSingleRegisterRequest;
+import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
+import com.ghgande.j2mod.modbus.net.SerialConnection;
+import com.ghgande.j2mod.modbus.net.TCPMasterConnection;
+import com.ghgande.j2mod.modbus.net.UDPMasterConnection;
+import com.ghgande.j2mod.modbus.procimg.InputRegister;
+import com.ghgande.j2mod.modbus.procimg.Register;
+import com.ghgande.j2mod.modbus.procimg.SimpleInputRegister;
+import com.ghgande.j2mod.modbus.util.BitVector;
 
 /**
- * Conversion utilities between underlying Modbus library (net.wimpi.modbus) and this transport bundle
+ * Conversion utilities between underlying Modbus library (com.ghgande.j2mod.modbus) and this transport bundle
  *
  * @author Sami Salonen - Initial contribution
  *
