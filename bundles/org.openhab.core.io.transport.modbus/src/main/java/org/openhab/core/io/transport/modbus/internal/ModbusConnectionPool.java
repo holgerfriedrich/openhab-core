@@ -18,8 +18,7 @@ import org.apache.commons.pool2.impl.GenericKeyedObjectPoolConfig;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusSlaveEndpoint;
-
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
+import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnection;
 
 /**
  * Pool for modbus connections.

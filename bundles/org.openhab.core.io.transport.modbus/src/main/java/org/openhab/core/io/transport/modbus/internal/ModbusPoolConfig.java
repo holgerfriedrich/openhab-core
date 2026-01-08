@@ -19,9 +19,8 @@ import org.apache.commons.pool2.impl.EvictionPolicy;
 import org.apache.commons.pool2.impl.GenericKeyedObjectPoolConfig;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
+import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnection;
 import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnectionEvictionPolicy;
-
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
 
 /**
  * Configuration for Modbus connection pool

@@ -17,8 +17,6 @@ import org.apache.commons.pool2.impl.EvictionConfig;
 import org.apache.commons.pool2.impl.EvictionPolicy;
 import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnectionFactoryImpl.PooledConnection;
 
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
-
 /**
  * Eviction policy, i.e. policy for deciding when to close idle, unused connections.
  *

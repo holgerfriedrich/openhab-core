@@ -34,7 +34,6 @@ import org.openhab.core.io.transport.modbus.endpoint.ModbusUDPSlaveEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
 import com.ghgande.j2mod.modbus.net.SerialConnection;
 import com.ghgande.j2mod.modbus.net.TCPMasterConnection;
 import com.ghgande.j2mod.modbus.net.UDPMasterConnection;
@@ -156,7 +155,7 @@ public class ModbusSlaveConnectionFactoryImpl
             public @Nullable ModbusSlaveConnection visit(ModbusSerialSlaveEndpoint modbusSerialSlavePoolingKey) {
                 SerialConnection connection = new SerialConnection(modbusSerialSlavePoolingKey.getSerialParameters());
                 logger.trace("Created connection {} for endpoint {}", connection, modbusSerialSlavePoolingKey);
-                return connection;
+                return new ModbusSlaveConnection(connection);
             }
 
             @Override
@@ -166,10 +165,12 @@ public class ModbusSlaveConnectionFactoryImpl
                     return null;
                 }
                 int connectTimeoutMillis = getEndpointPoolConfiguration(key).getConnectTimeoutMillis();
-                TCPMasterConnection connection = new TCPMasterConnection(address, key.getPort(), connectTimeoutMillis,
-                        key.getRtuEncoded());
+                TCPMasterConnection connection = new TCPMasterConnection(address);
+                connection.setPort(key.getPort());
+                connection.setTimeout(connectTimeoutMillis);
+                // TODO key.getRtuEncoded());
                 logger.trace("Created connection {} for endpoint {}", connection, key);
-                return connection;
+                return new ModbusSlaveConnection(connection);
             }
 
             @Override
@@ -178,9 +179,10 @@ public class ModbusSlaveConnectionFactoryImpl
                 if (address == null) {
                     return null;
                 }
-                UDPMasterConnection connection = new UDPMasterConnection(address, key.getPort());
+                UDPMasterConnection connection = new UDPMasterConnection(address);
+                connection.setPort(key.getPort());
                 logger.trace("Created connection {} for endpoint {}", connection, key);
-                return connection;
+                return new ModbusSlaveConnection(connection);
             }
         });
     }
