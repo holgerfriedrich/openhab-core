@@ -34,8 +34,9 @@ public class ModbusSerialSlaveEndpoint implements ModbusSlaveEndpoint {
 
     public ModbusSerialSlaveEndpoint(String portName, int baudRate, int flowControlIn, int flowControlOut, int databits,
             int stopbits, int parity, String encoding, boolean echo, int receiveTimeoutMillis) {
-        this(new SerialParameters(portName, baudRate, flowControlIn, flowControlOut, databits, stopbits, parity,
-                encoding, echo, receiveTimeoutMillis));
+        this(new SerialParameters(portName, baudRate, flowControlIn, flowControlOut, databits, stopbits, parity, echo));
+        this.serialParameters.setEncoding(encoding);
+        // TODO receiveTimeoutMillis
     }
 
     public ModbusSerialSlaveEndpoint(String portName, int baudRate, String flowControlIn, String flowControlOut,
@@ -50,7 +51,8 @@ public class ModbusSerialSlaveEndpoint implements ModbusSlaveEndpoint {
         parameters.setParity(parity);
         parameters.setEncoding(encoding);
         parameters.setEcho(echo);
-        parameters.setReceiveTimeoutMillis(receiveTimeoutMillis);
+        // parameters.setReceiveTimeoutMillis(receiveTimeoutMillis);
+        // TODO receiveTimeoutMillis
         this.serialParameters = parameters;
     }
 

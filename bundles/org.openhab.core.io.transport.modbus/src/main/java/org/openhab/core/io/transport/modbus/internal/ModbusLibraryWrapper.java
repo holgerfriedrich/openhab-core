@@ -33,6 +33,7 @@ import org.openhab.core.io.transport.modbus.endpoint.ModbusSlaveEndpoint;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusSlaveEndpointVisitor;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusTCPSlaveEndpoint;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusUDPSlaveEndpoint;
+import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,10 +55,6 @@ import com.ghgande.j2mod.modbus.msg.WriteCoilRequest;
 import com.ghgande.j2mod.modbus.msg.WriteMultipleCoilsRequest;
 import com.ghgande.j2mod.modbus.msg.WriteMultipleRegistersRequest;
 import com.ghgande.j2mod.modbus.msg.WriteSingleRegisterRequest;
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
-import com.ghgande.j2mod.modbus.net.SerialConnection;
-import com.ghgande.j2mod.modbus.net.TCPMasterConnection;
-import com.ghgande.j2mod.modbus.net.UDPMasterConnection;
 import com.ghgande.j2mod.modbus.procimg.InputRegister;
 import com.ghgande.j2mod.modbus.procimg.Register;
 import com.ghgande.j2mod.modbus.procimg.SimpleInputRegister;
@@ -211,13 +208,13 @@ public class ModbusLibraryWrapper {
         });
         // We disable modbus library retries and handle in the Manager implementation
         transaction.setRetries(0);
-        transaction.setRetryDelayMillis(0);
+        // TODO transaction.setRetryDelayMillis(0);
         if (transaction instanceof ModbusSerialTransaction serialTransaction) {
-            serialTransaction.setSerialConnection((SerialConnection) connection);
+            serialTransaction.setSerialConnection(connection.toSerialConnection());
         } else if (transaction instanceof ModbusUDPTransaction pTransaction) {
-            pTransaction.setTerminal(((UDPMasterConnection) connection).getTerminal());
+            pTransaction.setTerminal(connection.toUDPMasterConnection().getTerminal());
         } else if (transaction instanceof ModbusTCPTransaction pTransaction) {
-            pTransaction.setConnection((TCPMasterConnection) connection);
+            pTransaction.setConnection(connection.toTCPMasterConnection());
         } else {
             throw new IllegalStateException();
         }

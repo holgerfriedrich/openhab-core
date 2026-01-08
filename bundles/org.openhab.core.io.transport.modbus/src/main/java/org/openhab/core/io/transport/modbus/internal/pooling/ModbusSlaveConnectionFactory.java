@@ -15,8 +15,6 @@ package org.openhab.core.io.transport.modbus.internal.pooling;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.openhab.core.io.transport.modbus.endpoint.ModbusSlaveEndpointVisitor;
 
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
-
 /**
  * Factory for ModbusSlaveConnection objects using endpoint definition.
  *

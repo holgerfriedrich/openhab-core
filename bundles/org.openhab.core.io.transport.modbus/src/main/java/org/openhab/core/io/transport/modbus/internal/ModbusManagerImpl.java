@@ -59,6 +59,7 @@ import org.openhab.core.io.transport.modbus.exception.ModbusConnectionException;
 import org.openhab.core.io.transport.modbus.exception.ModbusUnexpectedResponseFunctionCodeException;
 import org.openhab.core.io.transport.modbus.exception.ModbusUnexpectedResponseSizeException;
 import org.openhab.core.io.transport.modbus.exception.ModbusUnexpectedTransactionIdException;
+import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnection;
 import org.openhab.core.io.transport.modbus.internal.pooling.ModbusSlaveConnectionFactoryImpl;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -73,7 +74,6 @@ import com.ghgande.j2mod.modbus.ModbusSlaveException;
 import com.ghgande.j2mod.modbus.io.ModbusTransaction;
 import com.ghgande.j2mod.modbus.msg.ModbusRequest;
 import com.ghgande.j2mod.modbus.msg.ModbusResponse;
-import com.ghgande.j2mod.modbus.net.ModbusSlaveConnection;
 
 /**
  * Main implementation of ModbusManager
