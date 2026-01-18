@@ -9,6 +9,8 @@ Fragment-Host: org.openhab.core.io.rest.core
 -runblacklist: \
 	bnd.identity;id='jakarta.ws.rs-api'
 
+-runtrace: true
+
 #
 # done
 #
