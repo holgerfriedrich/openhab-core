@@ -42,18 +42,18 @@
 	</feature>
 
 	<feature name="openhab.tp-coap" description="Californium CoAP library" version="${project.version}">
-		<capability>openhab.tp;feature=coap;version=4.0.0-M2</capability>
-		<bundle>mvn:org.eclipse.californium/californium-osgi/4.0.0-M2</bundle>
-		<bundle>mvn:org.eclipse.californium/californium-core/4.0.0-M2</bundle>
-		<bundle>mvn:org.eclipse.californium/element-connector/4.0.0-M2</bundle>
-		<bundle>mvn:org.eclipse.californium/scandium/4.0.0-M2</bundle>
+		<capability>openhab.tp;feature=coap;version=4.0.0-M6</capability>
+		<bundle>mvn:org.eclipse.californium/californium-osgi/4.0.0-M6</bundle>
+		<bundle>mvn:org.eclipse.californium/californium-core/4.0.0-M6</bundle>
+		<bundle>mvn:org.eclipse.californium/element-connector/4.0.0-M6</bundle>
+		<bundle>mvn:org.eclipse.californium/scandium/4.0.0-M6</bundle>
 		<bundle dependency="true">mvn:org.slf4j/jul-to-slf4j/2.0.17</bundle>
 		<bundle dependency="true">mvn:org.bouncycastle/bcprov-jdk18on/1.84</bundle>
 	</feature>
 
 	<feature name="openhab.tp-commons-net" description="The Apache Commons Net library" version="${project.version}">
-		<capability>openhab.tp;feature=commons-net;version=3.12.0</capability>
-		<bundle dependency="true">mvn:commons-net/commons-net/3.12.0</bundle>
+		<capability>openhab.tp;feature=commons-net;version=3.13.0</capability>
+		<bundle dependency="true">mvn:commons-net/commons-net/3.13.0</bundle>
 		<bundle dependency="true">mvn:commons-io/commons-io/2.22.0</bundle>
 	</feature>
 
@@ -138,8 +138,8 @@
 	</feature>
 
 	<feature name="openhab.tp-jbbp" description="Java Binary Block Parser library" version="${project.version}">
-		<capability>openhab.tp;feature=jbbp;version=3.0.1</capability>
-		<bundle dependency="true">mvn:org.openhab.osgiify/com.igormaznitsa.jbbp/3.0.1</bundle>
+		<capability>openhab.tp;feature=jbbp;version=3.0.2</capability>
+		<bundle dependency="true">mvn:org.openhab.osgiify/com.igormaznitsa.jbbp/3.0.2</bundle>
 	</feature>
 
 	<feature name="openhab.tp-netty" description="Netty bundles" version="${project.version}">
