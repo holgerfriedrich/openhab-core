@@ -79,5 +79,7 @@ jobs:
           commit-message: "Update maven wrapper to ${{ steps.maven.outputs.version }}"
           title: "Update Maven Wrapper to ${{ steps.maven.outputs.version }}"
           branch: gha/update-maven-wrapper
+          author: openhab-bot <bot@openhab.org>
           delete-branch: true
           labels: infrastructure
+          signoff: true

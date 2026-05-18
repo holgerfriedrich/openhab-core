@@ -58,5 +58,7 @@ jobs:
           commit-message: "Resolve itest dependencies"
           title: "Resolve itest dependencies"
           branch: "gha/resolver/${{ github.ref_name }}"
+          author: openhab-bot <bot@openhab.org>
           delete-branch: true
           # labels: infrastructure
+          signoff: true
