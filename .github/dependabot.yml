@@ -206,7 +206,6 @@ updates:
       - dependency-name: "org.apache.maven.resolver:maven-resolver-named-locks"
       - dependency-name: "org.apache.maven.resolver:maven-resolver-spi"
       - dependency-name: "org.apache.maven.resolver:maven-resolver-util"
-      - dependency-name: "org.apache.maven:maven-artifact"
       - dependency-name: "org.apache.maven:maven-model"
       - dependency-name: "org.apache.mina:mina-core"
       - dependency-name: "org.apache.pdfbox:fontbox"
