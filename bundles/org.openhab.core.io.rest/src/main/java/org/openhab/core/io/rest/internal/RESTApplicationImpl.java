@@ -37,6 +37,7 @@ import jakarta.ws.rs.core.Application;
 public class RESTApplicationImpl extends Application {
 
     @Override
+    @NonNullByDefault({})
     public Map<String, Object> getProperties() {
         // Silence "JAXBContext implementation could not be found. WADL feature is disabled." - WADL is superseded by
         // OpenAPI
