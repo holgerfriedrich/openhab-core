@@ -12,6 +12,8 @@
  */
 package org.openhab.core.io.rest.internal;
 
+import java.util.Map;
+
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.openhab.core.io.rest.RESTConstants;
 import org.osgi.service.component.annotations.Component;
@@ -33,4 +35,11 @@ import jakarta.ws.rs.core.Application;
 @JakartarsApplicationBase("rest")
 @NonNullByDefault
 public class RESTApplicationImpl extends Application {
+
+    @Override
+    public Map<String, Object> getProperties() {
+        // Silence "JAXBContext implementation could not be found. WADL feature is disabled." - WADL is superseded by
+        // OpenAPI
+        return Map.of("jersey.config.server.wadl.disableWadl", true);
+    }
 }
