@@ -19,9 +19,9 @@
     <californium.version>4.0.0-M2</californium.version>
     <jackson.annotations.version>2.21</jackson.annotations.version>
     <jackson.version>2.21.4</jackson.version>
-    <jetty.version>12.1.9</jetty.version>
+    <jetty.version>12.1.10</jetty.version>
     <pax.logging.version>2.3.4</pax.logging.version>
-    <pax.web.version>11.1.1</pax.web.version>
+    <pax.web.version>11.1.2</pax.web.version>
     <swagger.version>2.2.49</swagger.version>
   </properties>
 
