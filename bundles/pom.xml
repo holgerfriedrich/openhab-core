@@ -210,7 +210,7 @@
           <plugin>
             <groupId>org.jvnet.jaxb</groupId>
             <artifactId>jaxb-maven-plugin</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.16</version>
             <configuration>
               <schemaDirectory>schema</schemaDirectory>
               <bindingDirectory>schema/binding</bindingDirectory>
