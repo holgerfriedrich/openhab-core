@@ -70,10 +70,6 @@ Fragment-Host: org.openhab.core.automation
 	de.focus_shift.jollyday-core;version='[1.9.3,1.9.4)',\
 	de.focus_shift.jollyday-jackson;version='[1.9.3,1.9.4)',\
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.22.0,2.22.1)',\
-	com.fasterxml.jackson.core.jackson-core;version='[2.22.3,2.22.4)',\
-	com.fasterxml.jackson.core.jackson-databind;version='[2.22.3,2.22.4)',\
-	com.fasterxml.jackson.dataformat.jackson-dataformat-xml;version='[2.22.3,2.22.4)',\
-	com.fasterxml.jackson.dataformat.jackson-dataformat-yaml;version='[2.22.3,2.22.4)',\
 	org.yaml.snakeyaml;version='[2.5.0,2.5.1)',\
 	org.glassfish.hk2.osgi-resource-locator;version='[1.0.3,1.0.4)',\
 	com.sun.istack.commons-runtime;version='[4.1.2,4.1.3)',\
@@ -85,4 +81,8 @@ Fragment-Host: org.openhab.core.automation
 	org.ops4j.pax.web.pax-web-compatibility-servlet;version='[11.1.4,11.1.5)',\
 	stax2-api;version='[4.3.0,4.3.1)',\
 	biz.aQute.tester.junit-platform;version='[7.4.0,7.4.1)',\
-	com.sun.jna;version='[5.19.1,5.19.2)'
+	com.sun.jna;version='[5.19.1,5.19.2)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.22.4,2.22.5)',\
+	com.fasterxml.jackson.core.jackson-databind;version='[2.22.4,2.22.5)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-xml;version='[2.22.4,2.22.5)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-yaml;version='[2.22.4,2.22.5)'
