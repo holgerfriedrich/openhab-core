@@ -296,7 +296,7 @@
 		<bundle dependency="true">mvn:com.google.inject/guice/7.0.0</bundle>
 		<bundle dependency="true">mvn:jakarta.inject/jakarta.inject-api/2.0.1</bundle>
 
-		<bundle dependency="true">mvn:org.eclipse.orbit.bundles/org.aopalliance/1.0.0.v201105210816</bundle>
+		<bundle dependency="true">mvn:org.glassfish.hk2.external/aopalliance-repackaged/3.1.1</bundle>
 		<bundle dependency="true">mvn:io.github.classgraph/classgraph/4.8.192</bundle>
 		<bundle dependency="true">mvn:org.eclipse.orbit.bundles/org.antlr.runtime/3.2.0.v201101311130</bundle>
 
