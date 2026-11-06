@@ -132,19 +132,23 @@ public class PCMWebSocketConnection {
     public void onWebSocketBinary(ByteBuffer payload, Callback callback) {
         logger.trace("Received binary data of length {}", payload.remaining());
         PCMWebSocketAudioSource audioSource = this.audioSource;
-        if (audioSource != null) {
-            byte[] bytes = new byte[payload.remaining()];
-            payload.get(bytes);
-            PCMWebSocketStreamIdUtil.AudioPacketData streamData;
-            try {
-                streamData = PCMWebSocketStreamIdUtil.parseAudioPacket(bytes);
-            } catch (IOException e) {
-                logger.warn("Exception processing binary message: {}", e.getMessage());
-                return;
-            }
-            audioSource.writeToStreams(streamData.id(), streamData.sampleRate(), streamData.bitDepth(),
-                    streamData.channels(), streamData.audioData());
+        if (audioSource == null) {
+            callback.succeed();
+            return;
         }
+        byte[] bytes = new byte[payload.remaining()];
+        payload.get(bytes);
+        // the payload is not used after copying it, so release Jetty's frame buffer right away
+        callback.succeed();
+        PCMWebSocketStreamIdUtil.AudioPacketData streamData;
+        try {
+            streamData = PCMWebSocketStreamIdUtil.parseAudioPacket(bytes);
+        } catch (IOException e) {
+            logger.warn("Exception processing binary message: {}", e.getMessage());
+            return;
+        }
+        audioSource.writeToStreams(streamData.id(), streamData.sampleRate(), streamData.bitDepth(),
+                streamData.channels(), streamData.audioData());
     }
 
     @OnWebSocketMessage
